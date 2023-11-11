@@ -16,14 +16,14 @@ public class FollowState : MoveState
 
     public override void Execute()
     {
-        if (IAEye.enemy != null)
-        {
-            base.MoveToPosition(IAEye.enemy.position);
-        }
-        else
-        {
-            _EngineState.activateState(TypeState.Follow);
-            return;
-        }    
+        //if (IAEye.enemy != null)
+        //{
+        //    base.MoveToPosition(IAEye.enemy.position);
+        //}
+        //else
+        //{
+        //    _EngineState.activateState(TypeState.Follow);
+        //    return;
+        //}    
     }
 }

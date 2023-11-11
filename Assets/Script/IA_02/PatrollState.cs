@@ -32,22 +32,22 @@ public class PatrollState : MoveState
 
     public override void Execute()
     {
-        if (IAEye.enemy != null)
-        {
-            _EngineState.activateState(TypeState.Follow);
-            return;
-        }
-        else
-        {
-            if (FrameRate > Rate)
-            {
-                FrameRate = 0;
+        //if (IAEye.enemy != null)
+        //{
+        //    _EngineState.activateState(TypeState.Follow);
+        //    return;
+        //}
+        //else
+        //{
+        //    if (FrameRate > Rate)
+        //    {
+        //        FrameRate = 0;
 
-                CalculateNewPosition();
-            }
-            FrameRate += Time.deltaTime;
+        //        CalculateNewPosition();
+        //    }
+        //    FrameRate += Time.deltaTime;
 
-            base.MoveToPosition(newPosition);
-        }
+        //    base.MoveToPosition(newPosition);
+        //}
     }
 }
