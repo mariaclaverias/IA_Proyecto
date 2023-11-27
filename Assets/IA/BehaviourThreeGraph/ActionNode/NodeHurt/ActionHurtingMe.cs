@@ -1,9 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-[TaskCategory("MyAI/View")]
-public class ActionNodeNotViewEnemy : ActionNodeView
+[TaskCategory("MyAI/Hurt")]
+public class ActionHurtingMe: ActionNodeView
 {
     public override void OnStart()
     {
@@ -11,8 +11,8 @@ public class ActionNodeNotViewEnemy : ActionNodeView
     }
     public override TaskStatus OnUpdate()
     {
-        if(_IACharacterVehiculo.AIEye.ViewEnemy==null)
-          return TaskStatus.Success;
+        if (((Health)_IACharacterActions.health).HurtingMe != null)
+            return TaskStatus.Success;
 
         return TaskStatus.Failure;
     }

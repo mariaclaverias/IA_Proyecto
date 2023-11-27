@@ -5,8 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/Action")]
 public class ActionNodeAttack : ActionNodeAction
 {
-     
-
     public override void OnStart()
     {
         base.OnStart();
@@ -23,8 +21,6 @@ public class ActionNodeAttack : ActionNodeAction
     }
     void SwitchUnit()
     {
-
-
         switch (_UnitGame)
         {
             case UnitGame.Zombie:
@@ -42,8 +38,5 @@ public class ActionNodeAttack : ActionNodeAction
             default:
                 break;
         }
-
-
-
     }
 }

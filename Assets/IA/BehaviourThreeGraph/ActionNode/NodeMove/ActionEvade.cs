@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/Move")]
-public class ActionWander : ActionNodeVehicle
+public class ActionEvade : ActionNodeVehicle
 {
     public override void OnStart()
     {
@@ -26,7 +26,7 @@ public class ActionWander : ActionNodeVehicle
             case UnitGame.Zombie:
                 if(_IACharacterVehiculo is IACharacterVehiculoZombie)
                 {
-                    ((IACharacterVehiculoZombie)_IACharacterVehiculo).MoveToWander();  
+                    ((IACharacterVehiculoZombie)_IACharacterVehiculo).MoveToEvadEnemy();  
                 }
 
                 break;

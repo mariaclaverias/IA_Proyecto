@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
-
 [TaskCategory("MyAI/View")]
 public class ActionNodeViewEnemy : ActionNodeView
 {
@@ -17,4 +16,6 @@ public class ActionNodeViewEnemy : ActionNodeView
 
         return TaskStatus.Success;
     }
+
+
 }

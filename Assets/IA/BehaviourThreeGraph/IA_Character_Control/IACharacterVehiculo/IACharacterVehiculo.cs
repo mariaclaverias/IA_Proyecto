@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class IACharacterVehiculo : IACharacterControl
 {
-
     public float RangeWander;
+    public float RadiusSeparate;
+    public List<Health> vehicles;
+
     Vector3 positionWander;
     float FrameRate = 0;
     float Rate = 4;
@@ -72,5 +74,39 @@ public class IACharacterVehiculo : IACharacterControl
 
 
         MoveToPosition(positionWander);
+    }
+
+    public virtual void SeparateToAllie()
+    {
+        float desiredSeparation = RadiusSeparate * 2;
+        Vector3 sum = Vector3.zero;
+        int count = 0;
+
+        foreach (var item in vehicles)
+        {
+            if (this.gameObject.GetInstanceID() != item.gameObject.GetInstanceID())
+            {
+                Vector3 direccion = (item.transform.position - transform.position);
+                float d = direccion.magnitude;
+
+                if (d > 0 && d < desiredSeparation)
+                {
+                    Vector3 diff = (transform.position - item.transform.position);
+                    diff.Normalize();
+                    diff /= d;
+
+                    sum += diff;
+                    count++;
+                }
+            }
+        }
+
+        if (count > 0)
+        {
+            sum /= count;
+            sum.Normalize();
+        }
+
+        MoveToPosition(sum);
     }
 }

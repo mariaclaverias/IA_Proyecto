@@ -15,6 +15,5 @@ public class IACharacterControl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         health = GetComponent<Health>();
         AIEye = GetComponent<AIEyeBase>();
-
     }
 }

@@ -371,12 +371,12 @@ public class AIEyeBase : MonoBehaviour
             }
             CountEnemyView++;
         }
-        //else
+        else
         //if (_health.gameObject.CompareTag("Player"))
-        //{
-        //    if (ViewAllie == null)
-        //        ViewAllie = _health;
-        //}
+        {
+            if (ViewAllie == null)
+                ViewAllie = _health;
+        }
 
     }
 
