@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IACharacterVehiculoZombie : IACharacterVehiculo
 {
-    // Start is called before the first frame update
     void Start()
     {
         this.LoadComponent();
@@ -12,13 +11,22 @@ public class IACharacterVehiculoZombie : IACharacterVehiculo
     public override void LoadComponent()
     {
         base.LoadComponent();
-
+    }
+    public override void LookPosition(Vector3 position)
+    {
+        base.LookPosition(position);
     }
 
     public override void MoveToPosition(Vector3 pos)
     {
         base.MoveToPosition(pos);
     }
+
+    public override void MoveToWander()
+    {
+        base.MoveToWander();
+    }
+
     public override void MoveToEnemy()
     {
         base.MoveToEnemy( );
